@@ -9,7 +9,7 @@ driver.get("https://osu.ppy.sh/rankings/osu/performance?country=IN")
 playerz = []
 content = driver.page_source
 soup = BeautifulSoup(content, features="html.parser")
-aaa = "<track -limit 50 "
+aaa = "<track "
 for a in soup.findAll('a', href=True, attrs={'class':'ranking-page-table__user-link-text js-usercard'}):
 	attr = a.attrs.get("class")[0]
 	value = a.text
